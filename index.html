@@ -487,27 +487,53 @@
             </div>
         </section>
 
-        <<section class="comments-section">
-    <h2>💬 Leave a Message / Feedback</h2>
-    <div style="background: #f0f4f8; padding: 25px; border-radius: 15px; text-align: center;">
-        <p style="margin-bottom: 20px;">Have questions, feedback, or job opportunities? Fill out the form below.</p>
-        
-        <!-- Google Forms Embed -->
-        <iframe src="https://forms.gle/G9UtK9hWy61UdmVd7/viewform?embedded=true" 
-                width="100%" 
-                height="500" 
-                frameborder="0" 
-                marginheight="0" 
-                marginwidth="0"
-                style="border-radius: 10px;">
-            Loading…
-        </iframe>
-        
-        <p style="margin-top: 20px; font-size: 13px; color: #666;">
-            📧 Or email me directly at <a href="mailto:kalungucharles9@gmail.com.com">kalungucharles9@gmail.com</a>
-        </p>
-    </div>
-</section>
+               <!-- Contact Section - Email + WhatsApp -->
+        <section class="contact-section">
+            <h2>📬 Get In Touch</h2>
+            <div class="contact-container">
+                <!-- Email Card -->
+                <div class="contact-card email-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Send me an Email</h3>
+                    <p>Fill out the form below and I'll respond within 24 hours.</p>
+                    <form id="emailForm" action="https://formsubmit.co/kalungucharles9@gmail.com" method="POST">
+                        <!-- Honeypot to prevent spam -->
+                        <input type="text" name="_honey" style="display:none">
+                        <!-- Disable captcha (optional) -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Redirect after submit -->
+                        <input type="hidden" name="_next" value="https://YOUR_GITHUB_URL_HERE">
+                        <!-- Subject line -->
+                        <input type="hidden" name="_subject" value="New Message from Portfolio Visitor!">
+                        
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
+                        <button type="submit" class="send-btn">📤 Send Message</button>
+                    </form>
+                    <p class="form-note">✅ Your message will be sent directly to kalungucharles9@gmail.com</p>
+                </div>
+
+                <!-- WhatsApp Card -->
+                <div class="contact-card whatsapp-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>Chat on WhatsApp</h3>
+                    <p>Quickest way to reach me. Click the button below to start a conversation.</p>
+                    <div class="whatsapp-info">
+                        <span class="phone-number">📱 +254 715 537 665</span>
+                        <a href="https://wa.me/254715537665?text=Hello%20Charles%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!" 
+                           target="_blank" 
+                           class="whatsapp-chat-btn">
+                            💬 Start WhatsApp Chat
+                        </a>
+                        <a href="tel:+254715537665" class="call-btn">
+                            📞 Call Me
+                        </a>
+                    </div>
+                    <p class="form-note">⏰ Response time: Usually within a few hours</p>
+                </div>
+            </div>
+        </section>
 
         <footer>
             <p>© 2026 Charles Nzula Kalungu | BSc Mathematics with IT Graduate | "Finally I did it" - Philippians 4:13</p>
