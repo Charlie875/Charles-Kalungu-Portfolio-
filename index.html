@@ -38,6 +38,7 @@
             .profile-gallery { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
             .achievement-grid, .ref-grid, .cert-grid { grid-template-columns: 1fr !important; }
             .skills-main-grid { grid-template-columns: 1fr !important; }
+            .contact-container { grid-template-columns: 1fr !important; }
         }
 
         @media (max-width: 480px) {
@@ -79,12 +80,37 @@
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
             margin-top: 15px;
         }
         .contact-info a, .contact-info span { color: #555; text-decoration: none; }
         .contact-info a:hover { color: #2c5364; }
+
+        .whatsapp-link {
+            background: #25D366;
+            color: white !important;
+            padding: 5px 12px;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        .whatsapp-link:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+            color: white !important;
+        }
+        .call-link {
+            background: #34B7F1;
+            color: white !important;
+            padding: 5px 12px;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        .call-link:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+            color: white !important;
+        }
 
         section { margin-bottom: 40px; }
         h2 { color: #0f2027; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e0e0e0; }
@@ -226,43 +252,149 @@
         .ref-card a { color: #2c5364; text-decoration: none; }
         .ref-card a:hover { text-decoration: underline; }
 
-        .comment-form {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 25px;
+        /* Contact Section Styles - ADDED */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
         }
-        .comment-form input, .comment-form textarea {
+
+        .contact-card {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .contact-card h3 {
+            color: #0f2027;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .contact-card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .email-card form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .email-card input,
+        .email-card textarea {
             width: 100%;
             padding: 12px;
-            margin-bottom: 12px;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             font-family: inherit;
             font-size: 14px;
         }
-        .comment-form input:focus, .comment-form textarea:focus { outline: none; border-color: #2c5364; }
-        .comment-form button {
-            background: #2c5364;
+
+        .email-card input:focus,
+        .email-card textarea:focus {
+            outline: none;
+            border-color: #2c5364;
+        }
+
+        .send-btn {
+            background: linear-gradient(135deg, #2c5364 0%, #203a43 100%);
             color: white;
             border: none;
-            padding: 10px 24px;
-            border-radius: 8px;
+            padding: 12px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
         }
-        .comment-form button:hover { background: #203a43; }
-        .comments-list { max-height: 400px; overflow-y: auto; }
-        .comment-item {
+
+        .send-btn:hover {
+            transform: scale(1.02);
+        }
+
+        .whatsapp-card {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+        }
+
+        .whatsapp-card h3,
+        .whatsapp-card p {
+            color: white;
+        }
+
+        .whatsapp-info {
+            margin-top: 20px;
+        }
+
+        .phone-number {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 50px;
+        }
+
+        .whatsapp-chat-btn {
+            display: inline-block;
             background: white;
-            border: 1px solid #e0e0e0;
-            padding: 15px;
-            margin-bottom: 12px;
-            border-radius: 8px;
+            color: #25D366;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s;
         }
-        .comment-name { font-weight: bold; color: #2c5364; margin-bottom: 5px; }
-        .comment-text { color: #555; font-size: 14px; }
-        .comment-date { font-size: 11px; color: #999; margin-top: 8px; }
+
+        .whatsapp-chat-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .call-btn {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s;
+            border: 1px solid white;
+        }
+
+        .call-btn:hover {
+            background: white;
+            color: #128C7E;
+        }
+
+        .form-note {
+            font-size: 12px !important;
+            margin-top: 15px !important;
+            color: #888 !important;
+        }
+
+        .whatsapp-card .form-note {
+            color: rgba(255,255,255,0.8) !important;
+        }
 
         footer {
             text-align: center;
@@ -287,7 +419,7 @@
             <p class="title">BSc Mathematics with Information Technology | Second Class Honours (Upper Division)</p>
             <div class="quote">"Finally I did it" - Philippians 4:13</div>
             <div class="contact-info">
-                <span>📧 <a href="mailto:kalungucharles9@gmail.com.com">kalungucharles9@gmail..com</a></span>
+                <span>📧 <a href="mailto:kalungucharles9@gmail.com">kalungucharles9@gmail.com</a></span>
                 <span>📞 <a href="tel:+254715537665" class="call-link">Call: +254 715 537 665</a></span>
                 <span>📱 <a href="https://wa.me/254715537665" target="_blank" class="whatsapp-link">WhatsApp: +254 715 537 665</a></span>
                 <span>📍 Kakamega, Kenya</span>
@@ -487,7 +619,7 @@
             </div>
         </section>
 
-               <!-- Contact Section - Email + WhatsApp -->
+        <!-- Contact Section - Email + WhatsApp (FIXED URL) -->
         <section class="contact-section">
             <h2>📬 Get In Touch</h2>
             <div class="contact-container">
@@ -497,13 +629,10 @@
                     <h3>Send me an Email</h3>
                     <p>Fill out the form below and I'll respond within 24 hours.</p>
                     <form id="emailForm" action="https://formsubmit.co/kalungucharles9@gmail.com" method="POST">
-                        <!-- Honeypot to prevent spam -->
                         <input type="text" name="_honey" style="display:none">
-                        <!-- Disable captcha (optional) -->
                         <input type="hidden" name="_captcha" value="false">
-                        <!-- Redirect after submit -->
-                        <input type="hidden" name="_next" value="https://https://charlie875.github.io/Charles-Kalungu-Portfolio-/">
-                        <!-- Subject line -->
+                        <!-- FIXED: Correct URL without double https:// -->
+                        <input type="hidden" name="_next" value="https://charlie875.github.io/Charles-Kalungu-Portfolio-/thankyou.html">
                         <input type="hidden" name="_subject" value="New Message from Portfolio Visitor!">
                         
                         <input type="text" name="name" placeholder="Your Name" required>
@@ -598,20 +727,15 @@
             });
         }
 
-        // FIXED: CV Download that properly handles the PDF file
         function setupCVDownload() {
             const cvBtn = document.getElementById('downloadCV');
             if (!cvBtn) return;
             
             cvBtn.addEventListener('click', function() {
-                // Try multiple possible file names (your file is named "my-cv.pdf.pdf")
                 const possibleNames = ['my-cv.pdf', 'my-cv.pdf.pdf', 'My CV.pdf', 'My_CV.pdf'];
-                
-                let attemptCount = 0;
                 
                 function tryDownload(index) {
                     if (index >= possibleNames.length) {
-                        // If all PDF names fail, offer to download text version
                         const userChoice = confirm('⚠️ PDF file not found.\n\nMake sure your CV is saved as "my-cv.pdf" in the same folder as this webpage.\n\nClick OK to download a text version of your CV, or Cancel to go back.');
                         if (userChoice) {
                             downloadTextCV();
@@ -620,12 +744,9 @@
                     }
                     
                     const fileName = possibleNames[index];
-                    console.log('Trying to download:', fileName);
-                    
                     fetch(fileName, { method: 'HEAD' })
                         .then(response => {
                             if (response.ok) {
-                                // File exists! Create download link
                                 const link = document.createElement('a');
                                 link.href = fileName;
                                 link.download = 'Charles_Nzula_Kalungu_CV.pdf';
@@ -633,17 +754,13 @@
                                 link.click();
                                 document.body.removeChild(link);
                             } else {
-                                // Try next file name
                                 tryDownload(index + 1);
                             }
                         })
                         .catch(() => {
-                            // Try next file name
                             tryDownload(index + 1);
                         });
                 }
-                
-                // Start trying from first file name
                 tryDownload(0);
             });
         }
