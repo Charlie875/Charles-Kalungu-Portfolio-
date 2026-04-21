@@ -409,7 +409,166 @@ h2 {
     color: #999;
     margin-top: 8px;
 }
+        /* Contact Section Styles */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
 
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+
+        .contact-card {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .contact-card h3 {
+            color: #0f2027;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .contact-card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* Email Form Styles */
+        .email-card form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .email-card input,
+        .email-card textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .email-card input:focus,
+        .email-card textarea:focus {
+            outline: none;
+            border-color: #2c5364;
+        }
+
+        .send-btn {
+            background: linear-gradient(135deg, #2c5364 0%, #203a43 100%);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .send-btn:hover {
+            transform: scale(1.02);
+            background: linear-gradient(135deg, #203a43 0%, #1a2f3a 100%);
+        }
+
+        /* WhatsApp Card Styles */
+        .whatsapp-card {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+        }
+
+        .whatsapp-card h3,
+        .whatsapp-card p {
+            color: white;
+        }
+
+        .whatsapp-card .contact-icon {
+            filter: brightness(0) invert(1);
+        }
+
+        .whatsapp-info {
+            margin-top: 20px;
+        }
+
+        .phone-number {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 50px;
+        }
+
+        .whatsapp-chat-btn {
+            display: inline-block;
+            background: white;
+            color: #25D366;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-chat-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .call-btn {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s;
+            border: 1px solid white;
+        }
+
+        .call-btn:hover {
+            background: white;
+            color: #128C7E;
+            transform: scale(1.05);
+        }
+
+        .form-note {
+            font-size: 12px !important;
+            margin-top: 15px !important;
+            color: #888 !important;
+        }
+
+        .whatsapp-card .form-note {
+            color: rgba(255,255,255,0.8) !important;
+        }
 footer {
     text-align: center;
     padding-top: 30px;
