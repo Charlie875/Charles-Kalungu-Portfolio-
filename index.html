@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Charles Nzula Kalungu - Mathematics with IT Graduate from Masinde Muliro University. Skilled in R-Studio, SQL, Database Management, and Microsoft Office.">
+    <meta name="keywords" content="Charles Kalungu, Mathematics with IT graduate, MMUST, Kenya, R-Studio, SQL, Database Management, Data Entry">
+    <meta name="author" content="Charles Nzula Kalungu">
+    <title>Charles Nzula Kalungu - Mathematics with IT Graduate | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            padding: 20px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            overflow: hidden;
+            padding: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            h1 { font-size: 28px !important; }
+            .profile-gallery { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+            .achievement-grid, .ref-grid, .cert-grid { grid-template-columns: 1fr !important; }
+            .skills-main-grid { grid-template-columns: 1fr !important; }
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 10px; }
+            .container { padding: 15px; }
+            .profile-gallery { grid-template-columns: 1fr !important; }
+            .skill-tag { font-size: 11px; padding: 5px 12px; }
+        }
+
+        .profile-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .profile-img:hover { transform: scale(1.02); }
+
+        header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #2c5364;
+            margin-bottom: 30px;
+        }
+
+        h1 { font-size: 42px; color: #0f2027; margin-bottom: 10px; }
+        .title { font-size: 18px; color: #2c5364; font-weight: 500; margin-bottom: 10px; }
+        .quote { font-size: 20px; color: #c0392b; font-style: italic; margin: 15px 0; font-weight: 500; }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .contact-info a, .contact-info span { color: #555; text-decoration: none; }
+        .contact-info a:hover { color: #2c5364; }
+
+        section { margin-bottom: 40px; }
+        h2 { color: #0f2027; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e0e0e0; }
+
+        .edu-card {
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8eef5 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid #2c5364;
+            transition: transform 0.2s;
+        }
+        .edu-card:hover { transform: translateX(5px); }
+        .edu-card h3 { color: #0f2027; margin-bottom: 8px; }
+        .institution { font-weight: 500; color: #2c5364; }
+        .honor { color: #27ae60; font-weight: 600; margin-top: 8px; font-size: 16px; }
+        .years { color: #888; margin-top: 5px; font-size: 14px; }
+        .edu-card .note { color: #e67e22; font-size: 12px; margin-top: 8px; font-style: italic; background: #fff3e0; display: inline-block; padding: 4px 10px; border-radius: 15px; }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .cert-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+        .cert-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .cert-icon { font-size: 40px; margin-bottom: 10px; }
+        .cert-card h3 { font-size: 18px; color: #0f2027; margin-bottom: 8px; }
+        .cert-card p { color: #666; font-size: 14px; margin-bottom: 12px; }
+        .cert-badge { background: #2c5364; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; display: inline-block; }
+
+        .skills-main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        .skills-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        .skills-category h3 {
+            color: #2c5364;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #2c5364;
+            display: inline-block;
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .skill-tag {
+            background: linear-gradient(135deg, #2c5364 0%, #203a43 100%);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+        .skill-tag:hover { transform: translateY(-2px); box-shadow: 0 5px 12px rgba(44,83,100,0.3); }
+
+        .exp-card {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #2c5364;
+            transition: box-shadow 0.2s;
+        }
+        .exp-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .exp-card h3 { color: #0f2027; margin-bottom: 5px; }
+        .company { font-weight: 500; color: #2c5364; margin-bottom: 5px; }
+        .date { color: #888; font-size: 14px; margin-bottom: 12px; }
+        .exp-card ul { margin-left: 20px; color: #555; }
+        .exp-card li { margin-bottom: 8px; }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .achievement-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+            padding-bottom: 15px;
+        }
+        .achievement-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .achievement-card img { width: 100%; height: 250px; object-fit: cover; }
+        .achievement-card p { padding: 12px 12px 5px; font-weight: 600; color: #0f2027; }
+        .achievement-card small { color: #888; font-size: 11px; }
+
+        .cv-section {
+            text-align: center;
+            background: #f0f4f8;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        .cv-btn {
+            background: linear-gradient(135deg, #2c5364 0%, #203a43 100%);
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            font-size: 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        .cv-btn:hover { transform: scale(1.02); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+        .cv-note { font-size: 12px; color: #999; margin-top: 10px; }
+
+        .ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .ref-card {
+            background: #f0f4f8;
+            padding: 18px;
+            border-radius: 12px;
+            transition: transform 0.2s;
+        }
+        .ref-card:hover { transform: translateY(-3px); }
+        .ref-card h3 { color: #0f2027; font-size: 16px; margin-bottom: 8px; }
+        .ref-card p { color: #555; font-size: 13px; margin-bottom: 5px; }
+        .ref-card a { color: #2c5364; text-decoration: none; }
+        .ref-card a:hover { text-decoration: underline; }
+
+        .comment-form {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+        .comment-form input, .comment-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+        }
+        .comment-form input:focus, .comment-form textarea:focus { outline: none; border-color: #2c5364; }
+        .comment-form button {
+            background: #2c5364;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .comment-form button:hover { background: #203a43; }
+        .comments-list { max-height: 400px; overflow-y: auto; }
+        .comment-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+        }
+        .comment-name { font-weight: bold; color: #2c5364; margin-bottom: 5px; }
+        .comment-text { color: #555; font-size: 14px; }
+        .comment-date { font-size: 11px; color: #999; margin-top: 8px; }
+
+        footer {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-gallery">
+                <img src="2.jpeg" alt="Graduation celebration" class="profile-img" onerror="this.src='https://via.placeholder.com/200?text=Photo+2'">
+                <img src="4.jpeg" alt="Bachelor of Science in Mathematics" class="profile-img" onerror="this.src='https://via.placeholder.com/200?text=Photo+4'">
+                <img src="5.jpeg" alt="Achievement photo" class="profile-img" onerror="this.src='https://via.placeholder.com/300?text=Achievement'">
+                <img src="6.jpeg" alt="Graduation success - Philippians 4:13" class="profile-img" onerror="this.src='https://via.placeholder.com/300?text=Philippians+4:13'">
+            </div>
+            <h1>Charles Nzula Kalungu</h1>
+            <p class="title">BSc Mathematics with Information Technology | Second Class Honours (Upper Division)</p>
+            <div class="quote">"Finally I did it" - Philippians 4:13</div>
+            <div class="contact-info">
+                <span>📧 <a href="mailto:kalungucharles9@gmail.com.com">kalungucharles9@gmail..com</a></span>
+                <span>📞 <a href="tel:+254715537665" class="call-link">Call: +254 715 537 665</a></span>
+                <span>📱 <a href="https://wa.me/254715537665" target="_blank" class="whatsapp-link">WhatsApp: +254 715 537 665</a></span>
+                <span>📍 Kakamega, Kenya</span>
+            </div>
+        </header>
+
+        <section class="about">
+            <h2>📌 Personal Profile</h2>
+            <p>A recent graduate of Masinde Muliro University of Science and Technology with a Bachelor of Science degree in Mathematics with Information Technology (Second Class Honours, Upper Division). Currently volunteering at MMUST TVET College. Possesses strong skills in data entry, records management, Microsoft Office applications, statistical software (R-Studio), and database management. Self-motivated, disciplined and ready to perform any lawful duties assigned. Eager to contribute to any organization through dedicated service.</p>
+        </section>
+
+        <section class="education">
+            <h2>🎓 Education History</h2>
+            <div class="edu-card">
+                <h3>🎓 Bachelor of Science in Mathematics with Information Technology</h3>
+                <p class="institution">Masinde Muliro University of Science and Technology</p>
+                <p class="honor">🎉 Second Class Honours (Upper Division) | Class of 2025 🎉</p>
+                <p class="years">2021 - 2025</p>
+                <div class="note">✓ Verified Certificate</div>
+            </div>
+            <div class="edu-card">
+                <h3>🏫 Kenya Certificate of Secondary Education (KCSE)</h3>
+                <p class="institution">St. Bakhita Kyua Sec. School</p>
+                <p class="honor">📊 Grade: B- (Minus)</p>
+                <p class="years">2016 - 2020</p>
+                <div class="note">✓ Verified Certificate</div>
+            </div>
+            <div class="edu-card">
+                <h3>📚 Kenya Certificate of Primary Education (KCPE)</h3>
+                <p class="institution">Kyainya Primary School</p>
+                <p class="honor">📊 Marks: 270 / 500</p>
+                <p class="years">2006 - 2015</p>
+                <div class="note">✓ Verified Certificate</div>
+            </div>
+        </section>
+
+        <section class="certifications">
+            <h2>🏅 Certifications & Awards</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">📜</div>
+                    <h3>Bachelor's Degree</h3>
+                    <p>Mathematics with Information Technology (Honours)</p>
+                    <span class="cert-badge">Second Class Honours (Upper)</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">📊</div>
+                    <h3>Statistical Software Certification</h3>
+                    <p>R-Studio & R Programming</p>
+                    <span class="cert-badge">Proficient</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🗄️</div>
+                    <h3>Database Management</h3>
+                    <p>SQL, Database Design & Administration</p>
+                    <span class="cert-badge">Skilled</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🤖</div>
+                    <h3>AI & Intelligent Systems</h3>
+                    <p>Fundamentals Certificate</p>
+                    <span class="cert-badge">Foundational Knowledge</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">💻</div>
+                    <h3>Computer Systems Maintenance</h3>
+                    <p>Hardware & Software Troubleshooting</p>
+                    <span class="cert-badge">Hands-on Experience</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">📧</div>
+                    <h3>Web & Internet Proficiency</h3>
+                    <p>Email Communication, Online Research, Web Browsing</p>
+                    <span class="cert-badge">Certified</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2>💼 Work Experience</h2>
+            <div class="exp-card">
+                <h3>Volunteer</h3>
+                <p class="company">MMUST TVET College, Kakamega</p>
+                <p class="date">August 2025 - Present</p>
+                <ul>
+                    <li>Provide voluntary support to the college administration in various clerical and administrative duties</li>
+                    <li>Assist in document management, record keeping and correspondence handling</li>
+                    <li>Support daily office operations and assist staff with assigned tasks as needed</li>
+                    <li>Demonstrate reliability, initiative and a commitment to service delivery</li>
+                </ul>
+            </div>
+            <div class="exp-card">
+                <h3>Administrative Attachment Trainee</h3>
+                <p class="company">MMUST TVET College, Kakamega</p>
+                <p class="date">May 2025 - August 2025</p>
+                <ul>
+                    <li>Managed incoming and outgoing correspondence, ensuring timely and accurate dissemination of information</li>
+                    <li>Provided front-desk services, including receiving visitors and directing inquiries</li>
+                    <li>Utilized Microsoft Excel to create spreadsheets for student records and data analysis</li>
+                    <li>Assisted in preparation and formatting of reports, letters and presentations using Microsoft Word and PowerPoint</li>
+                    <li>Supported coordination of meetings and events, including scheduling and venue preparation</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2>⚙️ Technical & Professional Skills</h2>
+            <div class="skills-main-grid">
+                <div class="skills-category">
+                    <h3>💻 Technical Skills</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Microsoft Office (Excel, Word, PPT, Access)</span>
+                        <span class="skill-tag">R-Studio & R Programming</span>
+                        <span class="skill-tag">SQL & Database Design</span>
+                        <span class="skill-tag">Database Administration</span>
+                        <span class="skill-tag">Hardware Maintenance</span>
+                        <span class="skill-tag">Software Installation & Troubleshooting</span>
+                        <span class="skill-tag">AI & Intelligent Systems Fundamentals</span>
+                        <span class="skill-tag">Desktop Publishing</span>
+                        <span class="skill-tag">Email Communication</span>
+                        <span class="skill-tag">Online Research</span>
+                        <span class="skill-tag">Data Entry</span>
+                        <span class="skill-tag">Records Management</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>🌟 Soft Skills</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Analytical Thinking</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Attention to Detail</span>
+                        <span class="skill-tag">Critical Thinking</span>
+                        <span class="skill-tag">Effective Communication</span>
+                        <span class="skill-tag">Team Collaboration</span>
+                        <span class="skill-tag">Time Management</span>
+                        <span class="skill-tag">Adaptability</span>
+                        <span class="skill-tag">Self-Motivation</span>
+                        <span class="skill-tag">Professional Ethics & Integrity</span>
+                        <span class="skill-tag">Customer Service Orientation</span>
+                        <span class="skill-tag">Initiative</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="achievements">
+            <h2>🏆 My Achievements</h2>
+            <div class="achievement-grid">
+                <div class="achievement-card">
+                    <img src="2.jpeg" alt="Graduation celebration" onerror="this.src='https://via.placeholder.com/300?text=Graduation+2025'">
+                    <p>Graduation Celebration - 2025</p>
+                </div>
+                <div class="achievement-card">
+                    <img src="4.jpeg" alt="Bachelor of Science in Mathematics with Honors" onerror="this.src='https://via.placeholder.com/300?text=BSc+Mathematics'">
+                    <p>Bachelor of Science in Mathematics with Honors</p>
+                    <small>Class of 2025 | 2021-2025</small>
+                </div>
+                <div class="achievement-card">
+                    <img src="5.jpeg" alt="Achievement photo" onerror="this.src='https://via.placeholder.com/300?text=Achievement'">
+                    <p>Academic Excellence Recognition</p>
+                </div>
+                <div class="achievement-card">
+                    <img src="6.jpeg" alt="Philippians 4:13 - Finally I did it" onerror="this.src='https://via.placeholder.com/300?text=Philippians+4:13'">
+                    <p>"Finally I did it"</p>
+                    <small>Philippians 4:13</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2>📄 Download My CV</h2>
+            <button id="downloadCV" class="cv-btn">⬇️ Download CV (PDF)</button>
+            <p class="cv-note">Click to download my complete Curriculum Vitae (PDF format)</p>
+        </section>
+
+        <section class="references">
+            <h2>📋 References</h2>
+            <div class="ref-grid">
+                <div class="ref-card">
+                    <h3>Prof. Stephen Odebero, PhD, FIEEP</h3>
+                    <p>Ag. Principal, MMUST TVET College</p>
+                    <p>📧 <a href="mailto:sodebero@mmust.ac.ke">sodebero@mmust.ac.ke</a></p>
+                    <p>📞 +254 722 995 895</p>
+                </div>
+                <div class="ref-card">
+                    <h3>Dr. Sabella Kiprono</h3>
+                    <p>Ag. Deputy Principal, MMUST TVET College</p>
+                    <p>📧 <a href="mailto:Skiprono@mmust.ac.ke">Skiprono@mmust.ac.ke</a></p>
+                    <p>📞 +254 726 808 258</p>
+                </div>
+                <div class="ref-card">
+                    <h3>Ms. Mable Wambani</h3>
+                    <p>Senior Administrative Assistant, MMUST TVET College</p>
+                    <p>📧 <a href="mailto:nwambani@mmust.ac.ke">nwambani@mmust.ac.ke</a></p>
+                    <p>📞 +254 711 516 679</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="comments-section">
+            <h2>💬 Leave a Comment</h2>
+            <div class="comment-form">
+                <input type="text" id="commentName" placeholder="Your name" required>
+                <textarea id="commentText" rows="3" placeholder="Write your message, congratulations, or feedback..." required></textarea>
+                <button id="submitComment">Post Comment</button>
+            </div>
+            <div id="commentsList" class="comments-list"></div>
+        </section>
+
+        <footer>
+            <p>© 2026 Charles Nzula Kalungu | BSc Mathematics with IT Graduate | "Finally I did it" - Philippians 4:13</p>
+        </footer>
+    </div>
+
+    <script>
+        let comments = [];
+
+        function loadComments() {
+            const saved = localStorage.getItem('charlesPortfolioComments');
+            if (saved) {
+                comments = JSON.parse(saved);
+                displayComments();
+            }
+        }
+
+        function displayComments() {
+            const commentsList = document.getElementById('commentsList');
+            if (!commentsList) return;
+            if (comments.length === 0) {
+                commentsList.innerHTML = '<p style="color:#999; text-align:center;">✨ No comments yet. Be the first to congratulate Charles! ✨</p>';
+                return;
+            }
+            commentsList.innerHTML = comments.map(comment => `
+                <div class="comment-item">
+                    <div class="comment-name">⭐ ${escapeHtml(comment.name)}</div>
+                    <div class="comment-text">${escapeHtml(comment.text)}</div>
+                    <div class="comment-date">📅 ${comment.date}</div>
+                </div>
+            `).join('');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function addComment(name, text) {
+            if (!name.trim() || !text.trim()) {
+                alert('Please enter both your name and a comment');
+                return false;
+            }
+            comments.unshift({ name: name.trim(), text: text.trim(), date: new Date().toLocaleString() });
+            localStorage.setItem('charlesPortfolioComments', JSON.stringify(comments));
+            displayComments();
+            return true;
+        }
+
+        function setupCommentButton() {
+            const btn = document.getElementById('submitComment');
+            if (!btn) return;
+            btn.addEventListener('click', () => {
+                const nameInput = document.getElementById('commentName');
+                const textInput = document.getElementById('commentText');
+                if (addComment(nameInput.value, textInput.value)) {
+                    nameInput.value = '';
+                    textInput.value = '';
+                    alert('✅ Your comment has been posted!');
+                }
+            });
+        }
+
+        // FIXED: CV Download that properly handles the PDF file
+        function setupCVDownload() {
+            const cvBtn = document.getElementById('downloadCV');
+            if (!cvBtn) return;
+            
+            cvBtn.addEventListener('click', function() {
+                // Try multiple possible file names (your file is named "my-cv.pdf.pdf")
+                const possibleNames = ['my-cv.pdf', 'my-cv.pdf.pdf', 'My CV.pdf', 'My_CV.pdf'];
+                
+                let attemptCount = 0;
+                
+                function tryDownload(index) {
+                    if (index >= possibleNames.length) {
+                        // If all PDF names fail, offer to download text version
+                        const userChoice = confirm('⚠️ PDF file not found.\n\nMake sure your CV is saved as "my-cv.pdf" in the same folder as this webpage.\n\nClick OK to download a text version of your CV, or Cancel to go back.');
+                        if (userChoice) {
+                            downloadTextCV();
+                        }
+                        return;
+                    }
+                    
+                    const fileName = possibleNames[index];
+                    console.log('Trying to download:', fileName);
+                    
+                    fetch(fileName, { method: 'HEAD' })
+                        .then(response => {
+                            if (response.ok) {
+                                // File exists! Create download link
+                                const link = document.createElement('a');
+                                link.href = fileName;
+                                link.download = 'Charles_Nzula_Kalungu_CV.pdf';
+                                document.body.appendChild(link);
+                                link.click();
+                                document.body.removeChild(link);
+                            } else {
+                                // Try next file name
+                                tryDownload(index + 1);
+                            }
+                        })
+                        .catch(() => {
+                            // Try next file name
+                            tryDownload(index + 1);
+                        });
+                }
+                
+                // Start trying from first file name
+                tryDownload(0);
+            });
+        }
+
+        function downloadTextCV() {
+            const cvContent = `CHARLES NZULA KALUNGU
+
+PERSONAL PROFILE
+A recent graduate of Masinde Muliro University of Science and Technology with a Bachelor of Science degree in Mathematics and Information Technology (Second Class Honours, Upper Division). Currently volunteering at MMUST TVET College.
+
+WORK EXPERIENCE
+Volunteer | MMUST TVET College (August 2025 - Present)
+- Administrative and clerical duties
+- Document management and record keeping
+
+Administrative Attachment Trainee | MMUST TVET College (May 2025 - August 2025)
+- Managed correspondence and front-desk services
+- Microsoft Excel for student records
+
+TECHNICAL SKILLS
+- Microsoft Office (Excel, Word, PowerPoint, Access)
+- R-Studio & R Programming
+- SQL & Database Management
+- Hardware Maintenance & Software Troubleshooting
+- AI & Intelligent Systems Fundamentals
+
+SOFT SKILLS
+- Analytical Thinking, Problem Solving, Attention to Detail
+- Effective Communication, Team Collaboration
+- Adaptability, Self-Motivation, Professional Ethics
+
+EDUCATION
+BSc Mathematics & IT - Second Class Honours (Upper)
+Masinde Muliro University of Science and Technology | 2019-2023
+
+REFERENCES
+Prof. Stephen Odebero - sodebero@mmust.ac.ke - 0722 995 895
+Dr. Sabella Kiprono - Skiprono@mmust.ac.ke - +254 726 808 258
+Ms. Mable Wambani - nwambani@mmust.ac.ke - +254 711 516 679`;
+
+            const blob = new Blob([cvContent], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Charles_Nzula_Kalungu_CV.txt';
+            link.click();
+            URL.revokeObjectURL(link.href);
+        }
+
+        function setupPhotoClick() {
+            document.querySelectorAll('.profile-img, .achievement-card img').forEach(photo => {
+                photo.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const modal = document.createElement('div');
+                    modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;z-index:9999;cursor:pointer';
+                    const img = document.createElement('img');
+                    img.src = photo.src;
+                    img.style.maxWidth = '90%';
+                    img.style.maxHeight = '90%';
+                    img.style.borderRadius = '10px';
+                    modal.appendChild(img);
+                    modal.onclick = () => modal.remove();
+                    document.body.appendChild(modal);
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComments();
+            setupCommentButton();
+            setupCVDownload();
+            setupPhotoClick();
+        });
+    </script>
+</body>
+</html>
